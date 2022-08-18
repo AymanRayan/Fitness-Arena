@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="split-screen">
+
+    <h2 id="logo"><a routerLink="">Fitness Arena</a></h2>
+    
+    <div class="left">
+        <section class="copy">
+            <h1>Explore your abilities</h1>
+            <p>over 1000 trainee trust our coaches.</p>
+        </section>
+    </div>
+    <div class="right">
+        <form [formGroup]="traineeReq" (ngSubmit)="handleReg()">
+            <section class="copy">
+                <h2>Sign Up</h2>
+                <div class="login-container">
+                    <p>Already have an account? <a routerLink="/signin">
+                        <strong>Log In</strong>
+                    </a></p>
+                </div>
+            </section>
+
+            <div class="input-container name">
+                <label for="fname">First Name</label>
+                <input formControlName="fname" type="text" name="fname" id="fname">
+            </div>
+
+            <div class="input-container name">
+                <label for="fname">Last Name</label>
+                <input formControlName="lname" type="text" name="fname" id="fname">
+            </div>
+
+            <div class="input-container gender">
+                <label for="gender">Gender</label>
+                <select formControlName="gender" name="gender" id="gender">
+                    <option id="formOption" value="male">Male</option>
+                    <option id="formOption" value="female">Female</option>
+                  </select>
+            </div>
+
+            <div class="input-container email">
+                <label for="email">Email</label>
+                <input formControlName="email" type="email" name="email" id="email">
+            </div>
+
+            <div class="input-container date">
+                <label for="date">Birthday</label>
+                <input formControlName="birthDate" type="date" name="date" id="date">
+            </div>
+
+            <div class="input-container password">
+                <label for="password">Password</label>
+                <input formControlName="password" type="password" name="password" id="password" placeholder="Must be at least 6 characters">
+                <i class="far fa-eye-slash"></i>
+            </div> 
+
+            <!-- <div class="input-container cta">
+                <label class="checkbox-container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    sign up for email updates.
+                </label>
+            </div> -->
+
+            <button class="signup-btn" type="submit">Sign Up</button>
+
+            <section class="copy legal">
+                <p><span class="small">By Continuing, you agree to accept our
+                    <br> <a href="">Privacy policy</a> &amp; <a href="">Terms of services</a>.
+                </span></p>
+            </section>
+
+        </form>
+    </div>
+</div>

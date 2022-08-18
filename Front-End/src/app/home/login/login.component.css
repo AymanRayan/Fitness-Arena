@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*
+{
+    font-family: 'poppins', sans-serif !important;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#signin
+{
+    color: #fff;
+}
+
+::-webkit-scrollbar
+{
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: linear-gradient(to top,#2b121c, #40679c);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+    background: #6f263e;
+
+}
+
+.navv
+{
+    position: absolute;
+    z-index: 10;
+    padding: 10px 15px;
+}
+
+.navbar-brand
+{
+    color: #fff !important;
+    font-size: 1.5em;
+}
+
+
+section
+{
+    z-index: 0;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url(./imgs/bg3.png);
+    background-size: cover;
+    background-position: center right;
+}
+
+.form-container
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+    width: 380px;
+    padding: 50px 30px;
+    border-radius: 20px;
+    box-shadow: inset 7px 7px 50px #11050a;
+}
+
+h1
+{
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 2em;
+    font-weight: 600;
+}
+
+.control input
+{
+    width: 100%;
+    display: block;
+    padding: 7px 20px;
+    color: #222;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    margin: 0.2em 0 1em 0;
+    opacity: 0.9;
+}
+
+.control input[type="submit"]
+{
+    background: #40679c;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 600;
+    opacity: 0.8;
+    transition: 0.3s ease;
+    width: 50%;
+    transform: translate(50%, 0);
+    margin-top: 20px;
+}
+
+.control input[type="submit"]:hover
+{
+    opacity: 1;
+}
+
+.link
+{
+    text-align: center;
+}
+
+.link a
+{
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s ease;
+    opacity: 0.8;
+}
+
+#notMem
+{
+    transform: translate(0,5px) !important;
+}
+
+#notMem a
+{
+    color:#e45f75;
+    font-size: 0.95em;
+}
+
+
+.link a:hover
+{
+    opacity: 1;
+}
+
+span  
+{
+display: flex;
+align-items: center;
+column-gap: 10px;
+}

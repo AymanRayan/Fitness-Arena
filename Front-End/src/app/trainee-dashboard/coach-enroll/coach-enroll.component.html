@@ -1,0 +1,97 @@
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+
+<body id="coachbundle">
+
+<div class="main">
+
+
+
+
+        <!-- Header start -->
+        <div class="container mt-5">
+          <h2 class="text-center text-white fw-bold">Choose Bundle</h2>
+          <p class="lead text-center text-white mb-5 pt-6">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus rerum
+          </p>
+        </div>
+        <!-- Header End -->
+
+
+        <!-- Coaches Section Start -->
+        <section  class="coach">
+            <div class="container mt-5">
+                <div class="row gy-4 my-3 elrow ">
+                    <!--******************** New CARD START *********************-->
+                    <div class="col col-sm elcol d-flex justify-content-center" *ngFor="let item of bundles">
+                        <!-- Card start -->
+                        <div class="card" style="width: 18rem;">
+                            <div class="single-price">
+                                <h1 class="pt-1">{{item.name}}</h1>
+                                <div class="price">
+                                    <h2>{{item.fees}} EGP</h2>
+                                </div>
+
+                                <div class="deals">
+                                    <h4>{{item.description}}</h4>
+                                    <h4>lorem ipsum dolor.</h4>
+                                    <h3>{{item.durationDays}} Days</h3>
+
+                                </div>
+
+                                <button type="button"  (click)="enroll(item.bundleId)" class=" my-3 elButton">Select</button>
+                            </div>
+                        </div>
+                        <!-- Card End -->
+                    </div>
+                    <!--******************** New CARD END *********************-->
+
+                </div>
+            </div>
+        </section>
+        <!-- Coaches Section End -->
+
+</div>
+
+
+
+
+ <button class="d-none" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="xk"></button>
+
+
+ <div class="modal fade ff" id="exampleModal"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+
+
+    <div class="modal-content">
+
+      <!-- Modal header -->
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">You are already subscribed in another bundle </h4>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        To subscribe in this bundle, Please unsubscribe with your coach first.
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Countuoue exploring</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+
+</body>

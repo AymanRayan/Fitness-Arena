@@ -1,0 +1,73 @@
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+
+    <body id="coachbundle">
+
+    <div class="main">
+
+
+
+            <!-- Header start -->
+            <div class="container mt-5">
+              <h2 class="text-center text-white fw-bold">Choose Coach</h2>
+              <p class="lead text-center text-white mb-5 pt-6">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus rerum
+              </p>
+            </div>
+            <!-- Header End -->
+
+
+            <!-- Coaches Section Start -->
+            <section  class="coach">
+                <div class="container mt-5">
+                    <div class="row gy-4 my-3 elrow ">
+                        <!--******************** New CARD START *********************-->
+                        <div *ngFor="let item of ourCoaches" class="col col-sm elcol d-flex justify-content-center">
+                            <!-- Card start -->
+                            <div class="card" style="width: 18rem;">
+                                <div class="single-price">
+                                    <h1 class="pt-1">{{item.fname | titlecase}} {{item.lname | titlecase}}</h1>
+                                    <div class="price">
+                                        <img src="assets/images/hassan.webp"  alt="">
+                                    </div>
+
+                                    <div class="deals">
+                                        <h4>online coach my age is {{item.age}}</h4>
+                                        <h4>lorem ipsum dolor.</h4>
+                                        <h4>lorem ipsum dolor.</h4>
+                                        <h4>lorem ipsum dolor.</h4>
+                                    </div>
+
+                                    <button [routerLink]="['/coachenroll', item.userId]" type="button" class=" my-3 elButton">Learn more</button>
+
+                                </div>
+                            </div>
+                            <!-- Card End -->
+                        </div>
+                        <!--******************** New CARD END *********************-->
+
+
+
+
+                    </div>
+                </div>
+            </section>
+            <!-- Coaches Section End -->
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+
+    </body>

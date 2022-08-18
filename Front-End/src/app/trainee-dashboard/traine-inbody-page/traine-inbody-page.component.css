@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*
+{
+    font-family: 'poppins', sans-serif !important;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar
+{
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: linear-gradient(to top,#2b121c, #40679c);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+    background: #6f263e;
+
+}
+
+/* ************************************* */
+
+
+.page
+{
+    margin-top: 20px !important;
+    display: flex;
+    flex-direction: column;
+    /* justify-content:center !important; */
+    /* background: #b6cae6 !important; */
+    background: linear-gradient(45deg,#e4cdd7, #d8e0ee);
+    /* background-image: url(./../../../assets/imgs/bg.png); */
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.pageName
+{
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+
+.headItems
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.addNewBtnn
+{
+    padding: 5px 10px !important;
+    border-radius: 50px;
+    background: #40679c;
+    border: none;
+    color: white;
+    transition: 0.3s ease-in;
+}
+
+.addNewBtnn:hover
+{
+    background: #5e8fd4;
+}
+
+.plansHeader
+{
+    display: flex;
+    justify-content: space-between;
+    align-items:baseline;
+    margin-top: 30px;
+}

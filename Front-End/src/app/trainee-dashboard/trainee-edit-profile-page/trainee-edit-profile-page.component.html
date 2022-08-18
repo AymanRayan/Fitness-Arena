@@ -1,0 +1,228 @@
+<div class="page" id="coach">
+
+  <!-- Page Name -->
+<div class="container">
+    <h5 class="pageName">Profile Settings</h5>
+</div>
+
+
+<!-- Profile photo and Name -->
+<div class="container first-container">
+    <div class="profileAndName">
+      <img *ngIf="imgURL!=''; else secound" [src]="imgURL"class="image" >
+      <ng-template #secound>
+          <img *ngIf="user.photoSrc != null else elseblock" class="image" 
+          src='https://fitnessarena-api20220806024507.azurewebsites.net/images/{{user.photoSrc}}'>
+      </ng-template>
+      <ng-template #elseblock>
+          <img src='https://fitnessarena-api20220806024507.azurewebsites.net/images/{{user.gender}}.jpg' class="image">
+      </ng-template>
+        <div class="profileAndNameContent container-lg">
+            <h3>{{user.fname | titlecase}} {{user.lname | titlecase}}</h3>
+            <div class="editAndSave">
+              <a><label class="editPhoto">Edit Photo <input style="width: 0px;height: 0px;overflow: hidden;" type="file" (change)="onChange($event)"></label></a>
+              <button (click)="onUpload()" class="editProfile">Save</button>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- Modal -->
+    <!-- <button type="button" class="changePassword" data-bs-toggle="modal" data-bs-target="#changePass" >Change password</button> -->
+    <button (click)="showChangePass()" type="button" class="changePassword" >Change password</button>
+</div>
+
+    <!-- Info -->
+    <form [formGroup]="editData" (ngSubmit)="handleEdit()">
+      <div class="container info-container">
+      <!-- 1st Row -->
+      <div class="row">
+          <div class="col r1c1">
+                  <label class="static-word" for="fname">First name</label> <br>
+                  <input formControlName="fname" value="{{user.fname}}" type="text" placeholder="First name">
+          </div>
+  
+          <div class="col r1c2">
+              <label class="static-word" for="lname">Last name</label> <br>
+                  <input formControlName="lname" type="text" value="{{user.lname}}" placeholder="Last name">
+          </div>
+  
+          <div class="col r1c2">
+              <label class="static-word" for="phone">Phone number</label> <br>
+              <input type="number" placeholder="Phone number" value="012345678910">
+          </div>
+      </div>
+  
+      <!-- 2nd Row -->
+      <div class="row">
+          <div class="col r2c1">
+              <label class="static-word" for="city">Target</label> <br>
+              <input type="text" placeholder="target" value="{{user.target}}" formControlName="target"  >
+          </div>
+  
+          <div class="col r2c2 ">
+              <label class="static-word" for="city">Email</label> <br>
+              <input type="email" placeholder="Email" value="{{user.email}}" disabled>
+              
+          </div>
+  
+          <div class="col r2c3">
+              <label class="static-word" for="bday">Birthday</label> <br>
+              <input type="text" placeholder="Enter your birthdate" formControlName="birthDate"
+              value="{{user.birthDate | date : 'MM-dd-yyyy'}}" >
+          </div>
+      </div>
+  
+      <!-- 3rd Row -->
+      <div class="row">
+          <div class="col r3c1">
+              <label class="static-word" for="address">Address</label> <br>
+              <input type="text" placeholder="Address" formControlName="address" value="{{user.address}}">
+          </div>
+      </div>
+  
+      <div class="infoBtns">
+          <input type="submit" value="Save Changes" class="saveChanges">
+          <button routerLink="/profile/{{user.userId}}" class="cancelChanges">Cancel</button>
+      </div>
+  
+      </div>
+  </form>
+  
+      <!-- Plans -->
+      <div class="container ">
+          <!-- Header -->
+          <div class="plansHeader">
+          <h5 class="pageName">My Inbodies</h5>
+
+          <button routerLink="/addnewinbody" type="button" class="AddPlan" >Add New InBody</button>
+        </div>
+
+   <!-- Table -->
+   <div class="el">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+              <th scope="col" class="tobTableRadiusLeft">#</th>
+              <th scope="col">Inbody Date</th>
+              <!-- <th scope="col" class="tobTableRadiusRight">...</th> -->
+            </tr>
+          </thead>
+
+          <tbody *ngFor="let item of traineeInbody; let i = index;">
+            <tr>
+              <th scope="row">{{i + 1}}</th>
+              <td>{{item.date | date: "dd / MM"}}</td>
+              <td><button (click)="delInbody(item.inbodyId)" class="changePassword">Delete</button></td>
+            </tr>
+          </tbody>
+    </table>
+    </div>
+</div>
+</div>
+
+
+<!-- Change Password Modal -->
+<div class="modal fade" id="changePass" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+
+
+    <div class="modal-content">
+
+      <!-- Modal header -->
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Change password </h4>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+          <div class="ModalSatr">
+              <label class="modal-label">Old password</label>
+              <input type="password">
+          </div>
+
+          <div class="ModalSatr">
+              <label class="modal-label">New password</label>
+              <input type="password">
+          </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Confirm</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Dialogs -->
+<!-- change password -->
+<p-dialog  [showHeader]="false" [focusTrap]="true" [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [(visible)]="displayPass" [style]="{'width':'30vw', 'border': '2px solid #6f263e'}"
+ [modal]="true" [dismissableMask]="true"  styleClass="dark-panel">
+
+ <form [formGroup]="changePass" class="mb-4" (ngSubmit)="changePassword()">
+    <div class="col-md-12 my-4">
+        <label class="static-word">Old Password</label>
+        <input formControlName="oldPass" type="password" class="form-control" placeholder="enter Old password">
+    </div>
+    <div class="col-md-12 my-4">
+        <label class="static-word">New Password</label>
+        <input formControlName="newPass" type="password" class="form-control" placeholder="enter New password">
+    </div>
+    <div class=" text-center my-4">
+        <input type="Submit" value="Confirm" class="btn btn-secondary">
+    </div>
+</form>
+</p-dialog>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <section id="coach">
+<nav class="navbar navbar-light bg-white">
+  <a href="#" class="navbar-brand">Edit Trainee Profile</a>
+  <a routerLink="/trainee/1" class="btn btn-primary " type="button" id="button-addon2">
+    Back
+  </a>
+</nav>
+<form>
+  <div class="form-group">
+    <label for="First">First Name</label>
+    <input type="text" class="form-control" id="First" placeholder="First Name" >
+  </div>
+  <div class="form-group">
+    <label for="Last">Last Name</label>
+    <input type="text" class="form-control" id="Last" placeholder="Last Name" >
+  </div>
+  <div class="form-group">
+    <label for="Phone">Phone</label>
+    <input type="number" class="form-control" id="Phone" placeholder="Phone">
+  </div>
+  <div class="form-group">
+    <label for="Mobile">Mobile</label>
+    <input type="number" class="form-control" id="Mobile" placeholder="Mobile">
+  </div>
+  <div class="form-group">
+    <label for="Target">Target</label>
+    <input type="text" class="form-control" id="Target" placeholder="Target" >
+  </div>
+  <div class="form-group">
+    <label for="Profile">Profile Picture</label>
+    <input type="file" class="form-control" id="Profile" >
+  </div>
+  
+  <br>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</section> -->

@@ -1,0 +1,85 @@
+<div class="page" >
+
+  <!-- Page Name -->
+<div class="container">
+    <h5 class="pageName">Edit {{programData.name | titlecase}}</h5>
+    
+</div>
+
+  <form [formGroup]="editform" method="post" (ngSubmit)="handle()">
+  <!-- Info -->
+  <div class="container info-container">
+      <div class="inputElement">
+        <label class="static-word" for="prgramName">Program name</label>
+        <input type="text" placeholder="example: Chest" formControlName="name"  value="{{programData.name}}">
+      </div>
+
+      <div class="inputElement">
+        <label class="static-word" for="fname">Target</label>
+        <input type="text" placeholder="example: Upper chest" formControlName="target" value="{{programData.target}}">
+      </div>
+
+      <div class="inputElement">
+        <label class="static-word" for="fname">Description</label>
+        <input type="text" placeholder="Write program description" formControlName="progDecription" value="{{programData.progDecription}}">
+      </div>
+     <div class="inputElement">
+      <label for="formGroupExampleInput2" class="form-label">WorkOuts</label>
+        <p-multiSelect 
+        formControlName="programWorkouts"
+        styleClass="p-multiselect-trigger p-multiselect-filter-container p-button-danger"  [options]="workouts" class="form-control"  display="chip" optionLabel="name" aria-label="Default select example"></p-multiSelect>
+     </div>
+
+  <div class="infoBtns">
+      <input type="Submit" class="saveChanges" value="Save" [disabled]="!editform.valid">
+      <button routerLink="/programs" class="cancelChanges">Cancel</button>
+  </div>
+
+  </div>
+</form> 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

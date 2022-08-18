@@ -1,0 +1,103 @@
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+<!--<title>Responsive Regisration Form </title>-->
+<!--Navigation bar Start-->
+
+
+
+<div class="m-3 pb-1 SignupCoachLogo">
+  <span routerLink="" class="h3 fw-bold mb-3 logoText"> Fitness Arena</span>
+</div>
+
+<body>
+  <div class="container">
+
+    <h4 class="RegTitle">Coach Registration</h4>
+
+    <form [formGroup]="coachReg" (ngSubmit)="handleReg()">
+      <div class="form first">
+        <div class="details personal">
+          <span class="title ">
+            <p class="t-orange1">Personal Details </p>
+          </span>
+
+          <div class="fields">
+            <div class="input-field">
+              <label>First Name</label>
+              <input formControlName="fname" type="text" placeholder="Enter your first name" required>
+            </div>
+
+            <div class="input-field">
+              <label>Last Name</label>
+              <input formControlName="lname" type="text" placeholder="Enter your last name" required>
+            </div>
+
+            <div class="input-field">
+              <label>Date of Birth</label>
+              <input type="date" formControlName="birthDate" placeholder="Enter birth date" required>
+            </div>
+
+            <div class="input-field">
+              <label>Email</label>
+              <input type="text" formControlName="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-field">
+              <label>password</label>
+              <input type="password" formControlName="password" placeholder="Enter Strong password">
+            </div>
+
+            <div class="input-field">
+              <label>Gender</label>
+              <select required formControlName="gender">
+                <option disabled selected>Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="details ID">
+          <span class="title">Identity Details</span>
+
+          <div class="fields">
+            <div class="input-field">
+              <label>ID Number</label>
+              <input type="number" placeholder="Enter ID number" required>
+            </div>
+
+            <div class="input-field">
+              <label>Mobile Number</label>
+              <input type="number" placeholder="Enter mobile number">
+            </div>
+
+            <div class="input-field">
+              <label>Address</label>
+              <input type="text" formControlName="address" placeholder="Enter your Address" required>
+            </div>
+
+            <div class="input-field">
+              <label>Category</label>
+              <input type="text" formControlName="categoryName" placeholder="Enter your category" required>
+            </div>
+          </div>
+
+          <div class="SubFormBtn">
+            <input type="submit" value="SignUp" class="btn submitBtn ">
+          </div>
+          
+        </div>
+      </div>
+
+
+    </form>
+  </div>
+
+</body>

@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*
+{
+    font-family: 'poppins', sans-serif !important;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar
+{
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: linear-gradient(to top,#2b121c, #40679c);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+    background: #6f263e;
+
+}
+
+/* ------------------------------------------------------------ */
+
+:root
+{
+    line-height: 1.5;
+}
+
+.split-screen h1
+{
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+.split-screen h2
+{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.split-screen a
+{
+    text-decoration: none;
+    color: #40679c;
+}
+
+.split-screen a:hover
+{
+    text-decoration: underline;
+}
+
+.small
+{
+    font-size: 80%;
+    text-align: center;
+}
+
+.split-screen
+{
+    display: flex;
+    flex-direction: column;
+}
+
+#logo
+{
+    position: absolute;
+    color: white;
+    z-index: 2;
+    margin: 1.5rem 2rem;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+#logo a
+{
+    text-decoration: none;
+    color: white;
+}
+
+
+.left
+{
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.left, .right
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left
+{
+    /* background: linear-gradient(to top,#2b121c, #40679c), url(imgs/bg.png); */
+    /* background-image: url(imgs/bg3.png);
+    background-position: right;
+    position: sticky;
+    top: 0;
+    left: 0;
+    margin-bottom: 0; */
+    height: 0px;
+    display: none;
+}
+
+.left .copy
+{
+    color: white;   
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: greyscale;
+}
+
+.left p
+{
+    font-weight: 400;
+}
+
+.right
+{
+    background: url(./imgs/bg4.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.right .copy
+{
+    color: white;
+    text-align: center;
+}
+
+.right .copy p 
+{
+    margin: 1.5em 0;
+    font-size: 0.875rem;
+}
+
+.right form
+{
+    width: 328px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="Date"],
+form #gender
+
+{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: 1px solid #c4c4c4;
+    padding: 0.5em 1em;
+    margin-bottom: 1.25rem;
+    font-size: 0.875rem;
+}
+
+.gender option
+{
+  border-radius: 20px;
+}
+
+#formOption 
+{
+  border-radius: 50px;
+}
+
+
+
+form 
+{
+    padding: 40px;
+
+    padding: 40px;
+    min-width: 70% !important;
+    border-radius: 30px;
+    box-shadow:inset 7px 7px 80px #000;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+    margin-top: 20px;
+}
+
+label
+{
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.75rem;
+    color: white;
+}
+
+.input-container .password
+{
+    position: relative;
+}
+
+.input-container .password i
+{
+    position: absolute;
+    top: 42px;
+    right: 16px;
+}
+
+/* .checkbox-container input
+{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkbox-container
+{
+    display: block;
+    position: relative;
+    padding-left: 2rem;
+    cursor: pointer;
+    user-select: none;
+    margin: 0 0 1.25 0;
+}
+
+.checkbox-container input:checked~.checkmark
+{
+    background-color: #40679c;
+    border: 1px solid #40679c;
+}
+
+.checkmark
+{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: white;
+    border: 1px solid #c4c4c4;
+    border-radius: 2px;
+    top: -4px;
+    left: 0;
+}
+
+.checkmark::after
+{
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked~.checkmark::after
+{
+    display: block;
+}
+
+.checkbox-container .checkmark::after
+{
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    width: 5px;
+    height: 10px;
+    left: 9px;
+    top: 5px;
+    transform: rotate(45deg);
+} */
+
+.signup-btn
+{
+    display: block;
+    width: 50%;
+    margin: 10px 0 0 20%;
+    background: #40679c;
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 20px;
+    font-size: 0.75;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.signup-btn:hover
+{
+    background: #335079;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 900px)
+{
+    .split-screen
+    {
+        flex-direction: row;
+        height: 100%;
+    }
+
+    .left
+    {
+        height: 100vh;
+
+        background-image: url(./imgs/bg4.png);
+        background-position: center;
+        background-size: cover;
+        position: sticky;
+        top: 0;
+        left: 0;
+        margin-bottom: 0;
+    }
+
+    .right
+    {
+        padding-top: 50px;
+
+        background: linear-gradient(to top,#2b121c, #40679c);
+        position: sticky;
+        top: 0;
+        left: 0;
+
+        
+
+    }
+
+    .left,
+    .right
+    {
+        display: flex;
+        width: 50%;
+        min-height: 100%;
+    }
+
+    form 
+    {
+    padding: 40px;
+    min-width: 55% !important;
+    border-radius: 30px;
+    box-shadow:inset 7px 7px 80px #2b121c;
+    margin-top: 20px;
+    }
+
+    #logo
+{
+    position: absolute;
+    color: white;
+    z-index: 2;
+    margin: 1.5rem 2rem;
+    font-size: 1.2rem;
+}
+
+}

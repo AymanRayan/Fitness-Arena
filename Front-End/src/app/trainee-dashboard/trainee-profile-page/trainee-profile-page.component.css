@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*
+{
+    font-family: 'poppins', sans-serif !important;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar
+{
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: linear-gradient(to top,#2b121c, #40679c);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+    background: #6f263e;
+
+}
+
+body
+{
+    margin-top: 20px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content:center !important;
+    /* background: #b6cae6 !important; */
+    background: linear-gradient(45deg,#e4cdd7, #d8e0ee);
+}
+
+.bgi
+{
+    background: #2b121c;
+    z-index: 10;
+    cursor:default;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.pageName
+{
+    font-weight: 600;
+    margin-top: 25px;
+}
+
+.first-container
+{
+    padding: 15px 25px 15px !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    border-radius: 999px;
+    /* background: linear-gradient(rgba(43,18,28,0.8), rgba(64,103,156,0.8)); */
+    background: #2b121c;
+}
+
+.profileAndName
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.first-container h3
+{
+    font-weight: 700;
+    color: white;
+}
+
+.first-container h4
+{
+    font-size: 1rem;
+    color: white;
+}
+
+.editProfile
+{
+    padding: 5px 30px !important;
+    margin: 0 20px !important;
+    border-radius: 50px;
+    border: none;
+    background: #40679c;
+    color: white;
+    margin: 10px 0;
+    transition: 0.2s ease-in;
+}
+
+.editProfile:hover
+{
+    background: #658abc;
+}
+.image
+{
+    border-radius: 9999px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 9rem;
+    box-sizing: border-box;
+    margin: 0;
+    border: 4px solid #40679c;
+    margin-right: 25px;
+    transition: 0.5s ease-in-out;
+}
+
+.image:hover
+{
+    transform: scale(1.1);
+}
+
+.info-container
+{
+    padding: 15px 70px !important;
+    margin-top: 15px;
+    border-radius: 999px;
+    border: 3px solid #2b121c;
+    /* background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)); */
+}
+
+.static-word
+{
+    font-weight: 600;
+    color: #11050a;
+}
+
+.dynamic-word
+{
+    color: #11050a;
+}
+
+
+/* ******************************************************** */
+
+.bundlesHeader, .bundlesDescription
+{
+    color: #11050a;;
+}
+
+.single-price
+{
+    background-color: #40679c;
+    /* box-shadow: 1px 1px 20px rgba(0,0,0,0.5); */
+    text-align: center;
+    transition: 0.9s;
+    border-radius: 30px;
+}
+
+.card
+{
+    border: 0px !important;
+    border-radius: 30px !important;
+}
+
+
+
+.single-price:hover
+{
+    background: #9d3a4b;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,1);
+    transform: scale(1.1);
+    z-index: 1;
+    border-radius: 20px;
+}
+
+.single-price:hover .price
+{
+    border-color: #fff;
+}
+
+.single-price:hover .elButton
+{
+    background-color: #40679c !important;
+}
+
+.single-price a 
+{
+    text-decoration: none;
+    position: relative;
+    background: #da4357;
+    color: #fff;
+    padding: 10px 60px;
+    /* display: inline-block; */
+    margin: 10% auto;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: auto;
+
+}
+
+.price
+{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin: 5% auto 0 auto;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.elButton
+{
+    width: 52%;
+    padding: 0 35px;
+    background-color: #6f263e !important;
+    border: none !important;
+    border-radius: 9999px !important;
+    text-align: center;
+    padding: 0 0 ; 
+    height: 35px;
+    color: #fff;
+
+}
+
+
+
+.deals
+{
+    margin-top: 10%;
+}
+
+.single-price h1
+{
+    font-size: 18px;
+    color: #fff;
+    line-height: 3;
+    text-transform:capitalize;
+}
+
+.price h2
+{
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.deals h4
+{
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    color: #fff;
+    line-height: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

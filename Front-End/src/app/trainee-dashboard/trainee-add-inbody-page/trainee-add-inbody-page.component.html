@@ -1,0 +1,56 @@
+
+<div class="page">
+
+    <!-- Page Name -->
+  <div class="container">
+      <h5 class="pageName">Add new InBody</h5>
+  </div>
+
+
+
+
+    <!-- Info -->
+    <div class="container info-container">
+
+        <div class="inputElement">
+          <label class="static-word" for="prgramName">InBody Date</label>
+          <input type="date"  class="form-control"  name="date" [(ngModel)]="newInBody.date">
+        </div>
+
+        <div class="inputElement">
+          <label class="static-word" for="fname">Muscle</label>
+          <input type="number"  class="form-control" name="Muscle" placeholder="Muscle %" [(ngModel)]="newInBody.muscle">
+        </div>
+
+        <div class="inputElement">
+          <label class="static-word" for="fname">minerals</label>
+          <input type="number" class="form-control" name="fat" placeholder="minerals %" [(ngModel)]="newInBody.minerals">
+        </div>
+
+        <div class="inputElement">
+          <label class="static-word" for="fname">weight</label>
+          <input type="number"  class="form-control" name="Weight" placeholder="Weight" [(ngModel)]="newInBody.weight">
+        </div>
+        <div class="inputElement">
+          <label class="static-word" for="fname">proteins</label>
+          <input type="number" class="form-control" name="Water" placeholder="proteins" [(ngModel)]="newInBody.proteins">
+        </div>
+        <div class="inputElement">
+          <label class="static-word" for="fname">Body Water</label>
+          <input type="number" class="form-control" name="Weight" placeholder="Body water" [(ngModel)]="newInBody.water">
+        </div>
+        <div class="inputElement">
+          <label class="static-word" for="fname">height</label>
+          <input type="number" class="form-control" name="Weight" [(ngModel)]="newInBody.height">
+        </div>
+
+
+    <div class="infoBtns">
+        <button class="saveChanges" (click)="add()">Add</button>
+        <button class="cancelChanges" routerLink="/Traineeinbody">Cancel</button>
+    </div>
+
+    </div>
+</div>
+
+

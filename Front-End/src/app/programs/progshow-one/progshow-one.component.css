@@ -1,0 +1,187 @@
+.search
+{
+  display: flex;
+  height: 55px;
+  max-width: 355px;
+  position: sticky;
+  top: 0;
+  margin-top: 10px;
+  padding-top: 5px;
+}
+
+.search input
+{
+  background-color: #212327;
+  border-radius: 9999px;
+  height: 40px;
+  width: 100%;
+  border: none;
+  padding-left: 30px;
+  font-size: 1.1rem;
+  color: white;
+  line-height: 20px;
+  font-weight:400 ;
+}
+
+.titleSection
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title
+{
+    color: #212327;
+
+}
+
+
+
+/* Cards */
+
+
+.card
+{
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    overflow: hidden !important;
+    border-radius: 16px !important;
+}
+
+.img1 img
+{
+    /* height: 200px; */
+    
+    width: 100px;
+}
+
+.img1
+{
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+
+.card:hover .img1 img
+{
+    border-color: #C36312;
+    transition: 0.7s;
+    height: 300px;
+    
+}
+
+.main-part
+{
+    padding: 30px 0;
+    text-align: center;
+}
+
+.main-part h2
+{
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 20px;
+    margin: 0 0 20px;
+    color: #212327;
+}
+
+.main-part p
+{
+    font-size: 16px;
+    padding: 0 35px;
+    margin-bottom: 0%;
+    color: #212327;
+}
+
+.socials
+{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.socials i
+{
+    font-size: 20px;
+    color: #212327;
+    padding: 0 10px;
+}
+
+.elButton
+{
+    width: 52%;
+    padding: 0 35px;
+    background-color: #C36312 !important;
+    border: none !important;
+    border-radius: 9999px !important;
+    text-align: center;
+    padding: 0 0 ; 
+    height: 35px;
+    color: #fff;
+
+}
+
+.elButton:hover
+{
+    background-color: #ac5813 !important;
+}
+
+button
+{
+    border-radius: 9999px !important;
+}
+
+.navButton
+{
+    background-color: #C36312 !important;
+    border: none !important;
+}
+
+
+.elcard
+{
+    box-shadow: none !important;
+}
+
+
+img{
+    height:100% !important;
+    width: 100% !important;
+    object-fit: contain !important;
+}
+
+
+
+.Elzorar
+{ 
+    display: flex !important;
+    align-content: center !important;
+    padding: 0 10px !important;
+}
+
+
+span, h5, p
+ {
+    margin: 5px 0 !important;
+    padding:  0 0 !important;
+ } 
+
+ .description-title
+{
+    padding: 5px 0 !important;
+}
+
+
+ .btn-link
+ {
+    text-decoration: none !important;
+    border: none !important;
+    color: #212327 !important;
+ }
+
+ .btn-check:focus+.btn, .btn:focus 
+ {
+    box-shadow: none !important;
+ }
+ 
+
+

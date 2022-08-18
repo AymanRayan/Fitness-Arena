@@ -1,0 +1,42 @@
+<section>
+  <div class="container titleSection">
+
+    <div class="title">
+      <h4 class="fw-bold">Your Programs</h4>
+    </div>
+    <div class="search">
+      <input type="text" placeholder="Find a program">
+    </div>
+  </div>
+</section>
+<!-- Header Section End-->
+
+<!-- Coaches Section Start -->
+<section class="coach">
+  <div class="container ">
+    <div class="row gy-4 my-3 elrow ">
+
+
+      <!--******************** New CARD START *********************-->
+      <div class="col col-sm elcol d-flex justify-content-center" *ngFor="let traineeProgram of traineePrograms">
+        <div class="card" style="width: 18rem;">
+
+          <img src="../../../assets/images/test/bulk.jpg" class="card-img-top img1">
+
+
+          <div class="main-part">
+            <h2>{{traineeProgram.program.name}}</h2>
+            <p>{{traineeProgram.program.progDecription}}</p>
+            <button type="button" [routerLink]="['/traineeProgramDetails', traineeProgram.program.programId]" class=" mt-3 elButton">Select</button>
+          </div>
+
+        </div>
+      </div>
+      <!--******************** New CARD END *********************-->
+
+    </div>
+  </div>
+</section>
+
+
+

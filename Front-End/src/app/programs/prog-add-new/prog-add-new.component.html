@@ -1,0 +1,65 @@
+<div class="page" >
+
+  <!-- Page Name -->
+<div class="container">
+    <h5 class="pageName">Add new program</h5>
+</div>
+
+  <form [formGroup]="addform" method="post" (ngSubmit)="handle()">
+  <!-- Info -->
+  <div class="container info-container">
+      <div class="inputElement">
+        <label class="static-word" for="prgramName">Program name</label>
+        <input type="text" placeholder="example: Chest" formControlName="name">
+      </div>
+
+      <div class="inputElement">
+        <label class="static-word" for="fname">Target</label>
+        <input type="text" placeholder="example: Upper chest" formControlName="target">
+      </div>
+
+      <div class="inputElement">
+        <label class="static-word" for="fname">Description</label>
+        <input type="text" placeholder="Write program description" formControlName="progDecription">
+      </div>
+     <div class="inputElement">
+      <label for="formGroupExampleInput2" class="form-label">WorkOuts</label>
+      <span>
+          <!-- <a routerLink="workouts/add" class="btn btn-light mx-3">Add New</a> -->
+          <button type="button" (click)="show()" class="btn" pButton icon="pi pi-info-circle">Add</button>
+        </span>
+        <p-multiSelect 
+        formControlName="programWorkouts"
+        styleClass="p-multiselect-trigger p-multiselect-filter-container p-button-danger"  [options]="workouts" class="form-control"  display="chip" optionLabel="name" aria-label="Default select example"></p-multiSelect>
+     </div>
+
+  <div class="infoBtns">
+      <input type="Submit" class="saveChanges" value="Add">
+      <button routerLink="/programs" class="cancelChanges">Cancel</button>
+  </div>
+
+  </div>
+</form> 
+</div>
+
+
+<!-- form for workOut -->
+<p-dialog  [showHeader]="false" [focusTrap]="true" [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [(visible)]="display" [style]="{'width':'30vw', 'border': '2px solid #6f263e'}"
+ [modal]="true" [dismissableMask]="true"  styleClass="dark-panel">
+  <p class="text-center ">Add New workOut</p>
+  <form  [formGroup]="addWorkout" (ngSubmit)="addNewWorkout()" class="modal-body"  >
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" formControlName="name" class="form-control" id="name">
+    </div>
+    <div class="mb-3">
+      <label for="TargetMuscle" class="form-label">Target Muscle</label>
+      <input type="text" formControlName="targetMuscle" class="form-control" id="TargetMuscle">
+    </div>
+    <div class="mb-3">
+        <label for="Description" class="form-label">Description</label>
+        <input type="text" formControlName="description" class="form-control" id="TargetMuscle">
+    </div>
+    <button type="submit" class="btn btn-dark">Submit</button>
+  </form>
+</p-dialog>

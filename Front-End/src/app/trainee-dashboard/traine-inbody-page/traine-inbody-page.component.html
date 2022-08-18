@@ -1,0 +1,51 @@
+<div class="page" id="coach">
+
+
+  <div class="container">
+    <!-- Header -->
+    <div class="plansHeader">
+      <h5 class="pageName">InBody</h5>
+      <button routerLink="/addnewinbody" type="button" class="addNewBtnn">Add new InBody</button>
+    </div>
+  </div>
+  
+  <div class="container">
+    <!-- Table -->
+    <div class="el">
+      <table class="table table-striped table-hover">
+          <thead>
+              <tr>
+                <th scope="col" class="tobTableRadiusLeft">NO.</th>
+                <th scope="col">Date</th>
+                <th scope="col">Muscle %</th>
+                <th scope="col">minerals</th>
+                <th scope="col">proteins</th>
+                <th scope="col">Body Water </th>
+                <th scope="col">weight</th>
+                <th scope="col">Height</th>
+                <th>Actions</th>
+              
+                <!-- <th scope="col" class="tobTableRadiusRight">...</th> -->
+              </tr>
+            </thead>
+  
+            <tbody>
+              <tr *ngFor="let item of  inbodies;let x=index">
+                <th scope="col">{{x+1}}</th>
+                        <td>{{item.date | date }}</td>
+                        <td>{{item.muscle}}%</td>
+                        <td>{{item.minerals}}%</td>
+                        <td>{{item.proteins}}%</td>
+                        <td>{{item.water}}%</td>
+                        <td>{{item.weight}}</td>
+                        <td>{{item.height}}</td>
+                        <td>
+                          <button class="btn btn-outline-danger" (click)="remove(item.inbodyId)"  >Delete Inbody</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+      </div>
+  </div>
+
+</div>

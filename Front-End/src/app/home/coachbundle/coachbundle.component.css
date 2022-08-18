@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+::-webkit-scrollbar
+{
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: linear-gradient(to top,#2b121c, #40679c);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+    background: #6f263e;
+
+}
+*{
+    font-family: 'poppins', sans-serif !important;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+#coachbundle
+{
+    /* background-color: #eee; */
+    background: linear-gradient(45deg,#2b121c, #40679c);
+    min-height: 100vh;
+}
+
+.main
+{
+    min-height: 100vh !important;
+}
+
+.logo
+{
+    color: #fff !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    font-size: 1.5em !important;
+    letter-spacing: 2px !important;
+
+}
+
+
+
+.navbar a
+{
+    color: #fff !important;
+}
+
+.navbar
+{
+    position:static !important;
+    background:none !important;
+}
+
+#signInBtn
+{
+    background-color: #6f263e !important;
+    color: #fff !important;
+    border-radius: 50px !important;
+}
+
+#signInBtn:hover
+{
+    background-color: #9d3a4b !important;
+}
+
+#RegBtn:hover
+{
+    color: #2b121c !important;
+}
+
+.btn
+{
+    border-radius: 20px !important;
+}
+
+
+
+
+/* **************************************** */
+
+.single-price
+{
+    background-color: #262626;
+    box-shadow: 1px 1px 20px rgba(0,0,0,0.5);
+    text-align: center;
+    transition: 0.9s;
+    border-radius: 10px;
+}
+
+.card
+{
+    border: 0px !important;
+    border-radius: 15px !important;
+}
+
+
+
+.single-price:hover
+{
+    background: #9d3a4b;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,1);
+    transform: scale(1.1);
+    z-index: 1;
+    border-radius: 25px;
+}
+
+.single-price:hover .price
+{
+    border-color: #fff;
+}
+
+.single-price:hover .elButton
+{
+    background-color: #40679c !important;
+}
+
+.single-price a 
+{
+    text-decoration: none;
+    position: relative;
+    background: #da4357;
+    color: #fff;
+    padding: 10px 60px;
+    /* display: inline-block; */
+    margin: 10% auto;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: auto;
+
+}
+
+.price
+{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #9d3a4b;
+    margin: 5% auto 0 auto;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.elButton
+{
+    width: 52%;
+    padding: 0 35px;
+    background-color: #9d3a4b !important;
+    border: none !important;
+    border-radius: 9999px !important;
+    text-align: center;
+    padding: 0 0 ; 
+    height: 35px;
+    color: #fff;
+
+}
+
+
+
+.deals
+{
+    margin-top: 10%;
+}
+
+.single-price h1
+{
+    font-size: 18px;
+    color: #fff;
+    line-height: 3;
+    text-transform:capitalize;
+}
+
+.price h2
+{
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.deals h4
+{
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    color: #fff;
+    line-height: 1;
+}
+
+
+.footer-top {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-color: #2b121c;
+}
+
+.footer-top a {
+    color: var(--body);
+    text-decoration: none !important;
+}
+
+#logoP
+{
+    font-weight: 600 !important;
+}
+
+.footer-top a:hover {
+    color: var(--white);
+}
+
+.footer-bottom {
+    background-color: #2b121c;
+}
+
+
+::-webkit-scrollbar
+{
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: linear-gradient(to top,#2b121c, #40679c);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+    background: #6f263e;
+
+}

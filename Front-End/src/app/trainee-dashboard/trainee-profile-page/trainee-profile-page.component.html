@@ -1,0 +1,265 @@
+<body id="coach">
+
+  <div class="bgi"></div>
+    
+  <!-- Page Name -->
+  <div class="container">
+      <h5 class="pageName">Coach Profile</h5>
+  </div>
+
+  <!-- Profile photo and Name -->
+  <div class="container first-container">
+      <div class="profileAndName">
+          <img *ngIf="userData.photoSrc != null else elseblock" class="image"src='https://fitnessarena-api20220806024507.azurewebsites.net/images/{{userData.photoSrc}}'>
+          <ng-template #elseblock>
+            <img class="image" src="https://fitnessarena-api20220806024507.azurewebsites.net/images/{{userData.gender}}.jpg" >
+          </ng-template>
+          <!-- <img class="image" src="assets/imgs/hassan.webp"> -->
+          <div>
+              <h3>{{userData.fname | titlecase}} {{userData.lname | titlecase}}</h3>
+              <h4>New Here</h4>
+          </div>
+      </div>
+      
+      <button routerLink="/traineeEditprofile/{{userData.userId}}" class="editProfile">Edit profile</button>
+  </div>
+
+  <!-- Info -->
+  <div class="container info-container">
+      <!-- 1st Row -->
+      <div class="row">
+          <div class="col r1c1">
+                  <p>
+                      <span class="static-word">Age:</span> <br>
+                      <span class="dynamic-word">{{userData.age}} years</span>
+                  </p>
+          </div>
+
+          <div class="col r1c2">
+              <p>
+                  <span class="static-word">Email:</span><br>
+                  <span class="dynamic-word">{{userData.email}}</span>
+              </p>
+          </div>
+
+          <div class="col r1c2">
+              <p>
+                  <span class="static-word">Phone:</span><br>
+                  <span class="dynamic-word">01001122334</span>
+              </p>
+          </div>
+      </div>
+
+      <!-- 2nd Row -->
+      <div class="row">
+          <div class="col-4 r2c1">
+              <p>
+                  <span class="static-word">City:</span><br>
+                  <span class="dynamic-word">{{userData.address}}</span>
+              </p>
+          </div>
+
+          <div class="col r2c2">
+              <p>
+                  <span class="static-word">Birthday:</span><br>
+                  <span class="dynamic-word">{{userData.birthDate | date: 'dd MMMM yyyy' }}</span>
+              </p>
+          </div>
+
+          <!-- <div class="col r2c2">
+              <p>Age: 37 </p>
+          </div> -->
+      </div>
+  </div>
+   <!-- Info -->
+   <div class="container info-container" *ngIf="subscribed">
+    <!-- 1st Row -->
+    <div class="row">
+        <div class="col r1c1">
+                <p>
+                    <span class="static-word">Name</span> <br>
+                    <span class="dynamic-word">{{traineebundel.name | titlecase}} years</span>
+                </p>
+        </div>
+
+        <div class="col r1c2">
+            <p>
+                <span class="static-word">Duration</span><br>
+                <span class="dynamic-word">{{traineebundel.durationDays}} Days</span>
+            </p>
+        </div>
+
+        <div class="col r1c2">
+            <p>
+                <span class="static-word">Fees:</span><br>
+                <span class="dynamic-word">{{traineebundel.fees}}</span>
+            </p>
+        </div>
+    </div>
+          
+            
+    <!-- 2nd Row -->
+    <div class="row" *ngFor="let item of traineebundel.traineeBundles">
+        <div class="col-4 r2c1" >
+            <p>
+                <span class="static-word">Starts Data</span><br>
+                <span class="dynamic-word">{{item.subscriptionDate | date: "dd MMMM yyyy" }}</span>
+            </p>
+        </div>
+
+        <div class="col r2c2">
+            <p>
+                <span class="static-word">Birthday:</span><br>
+                <span class="dynamic-word">{{item.expiryDate | date: "dd MMMM yyyy" }}</span>
+            </p>
+        </div>
+        <div class="col r1c2">
+          <p>
+            <button (click)="unsubscribe()" class="editProfile">UnSubscribe </button>
+          </p>
+      </div>
+    </div>
+</div>      
+  
+  <!-- Header start -->
+  <div class="container mt-5">
+      <h2 class="text-center fw-bold bundlesHeader">Latest Inbody</h2>  
+      <p class="lead text-center pt-6 bundlesDescription">
+        Keep it tracked Moment in the lips forever in the hips
+      </p>
+    </div>
+    <!-- Header End -->
+
+  <!-- Coaches Section Start -->
+  <section  class="coachSection">
+      <div class="container mt-1">
+          <div class="row gy-4 my-3 elrow " >
+              <!--******************** New CARD START *********************-->
+              <div class="col col-sm elcol d-flex justify-content-center" *ngFor="let item of traineeinbody">
+                  <!-- Card start -->
+                  <div class="card" style="width: 18rem;">
+                      <div class="single-price">
+                          <h1 class="pt-1"></h1>
+                          <div class="price">
+                              <h2>{{item.date | date: "dd/MM"}}</h2>
+                          </div>
+
+                          <div class="deals">
+                              <h4>Muscle : {{item.muscle}}%</h4>
+                              <h4>Minerals : {{item.minerals}}%</h4>
+                              <h4>Weight : {{item.weight}}%</h4>
+                              <h4>Height : {{item.height}}%</h4>
+                          </div>
+
+                          <button (click)="remove(item.inbodyId)" type="button" class=" my-3 elButton" disabled>Delete</button>
+
+                      </div>
+                  </div>
+                  <!-- Card End -->
+              </div>
+              <!--******************** New CARD END *********************-->
+              
+          </div>
+      </div> 
+  </section>
+  <!-- Coaches Section End -->
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

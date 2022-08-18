@@ -1,0 +1,6 @@
+<app-side-bar *ngIf="auth.userType() == 'coach' && auth.isLogedin()"  ></app-side-bar>
+<app-trainee-side-bar *ngIf="auth.userType() == 'trainee' && auth.isLogedin()" ></app-trainee-side-bar>
+
+<router-outlet></router-outlet>
+
+

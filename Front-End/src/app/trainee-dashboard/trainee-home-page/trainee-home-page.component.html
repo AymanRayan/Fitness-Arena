@@ -1,0 +1,285 @@
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+
+
+  <section id="coach" class="container-fluid my-4">
+  <section id="feed">
+    <div class="main-flex">
+
+      <!-- Main Feed Start -->
+      <div class="main-feed">
+
+
+        <!-- El Accordion ahu - Start -->
+        <!-- <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header commentButton" id="flush-headingOne comments">
+              <button class="accordion-button collapsed commentButton" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                Accordion Item #1
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse ara comments" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body comments"> -->
+
+                <!-- Comment header -->
+                <!-- <div class="commentTitle">
+                  <img src="assets/imgs/hassan.webp" class="commenterImage">
+                  <p class="commenterName">Ahmed Mohamed</p>
+                  <p class="commenterType">Coach</p>
+                </div> -->
+
+                <!-- Comment itself -->
+                <!-- <div class="commentItSelf">
+                  <p>ahln wasahln ya shbab</p>
+                </div> -->
+
+                <!-- Write comment -->
+                <!-- <div class="writeComment">
+                  <input type="text" name="" id="inputComment" placeholder="Comment here">
+                </div> -->
+<!-- 
+              </div>
+          </div>
+          </div>
+        </div> -->
+        <!-- El Accordion ahu - Start -->
+
+
+
+
+
+        <!-- Title -->
+        <div class="home-bar">
+          <span>
+            <p class="fw-bold">News Feed</p>
+          </span>
+        </div>
+
+        <!-- Create New Post -->
+        <div class="new-post">
+          <img class="rounded-circle profile-image" width="45" height="45" src="" id="pppp" alt="">
+          <div class="new-post-details">
+            <input type="text" id="input-text-post" placeholder="what's on your mind?" [(ngModel)]="newpost.content">
+            <br>
+            <div>
+              <img *ngIf="imageURl != ''" [src]="imageURl" width="90% " height="500"  style="border-radius: 12px;">
+            </div>
+
+
+            <div class="new-post-action">
+              <ul>
+                <li>
+                  <div class="image-upload">
+                    <label for="file-input">
+                      <span class="material-symbols-outlined">
+                        image
+                      </span>
+                    </label>
+                    <input id="file-input" type="file" name="img" (change)="onchange($event)" />
+                  </div>
+                </li>
+                <li>
+                  <label for="file-input " >
+                    <span class="material-symbols-outlined d-none" id="delete" (click)="deletePhoto()">
+                      cancel
+                    </span>
+                  </label>
+                </li>
+              </ul>
+              <button class="post-button" (click)="add()">post</button>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Post from Feeds -->
+        <div class="feed-post" *ngFor="let item of posts">
+          <img width="45" height="45" [src]="'https://fitnessarena-api20220806024507.azurewebsites.net/images/'+item.user.photoSrc" class="profile-image rounded-circle" >
+
+          <div class="feed-post-details">
+            <div class="user-details">
+              <a href="" class="user-name-title">
+                <span class="user-name fw-bold"> {{item.user.fname | titlecase}} {{item.user.lname| titlecase}}</span>
+
+                <span class="user-handle">
+                  {{item.user.type | titlecase}}
+                </span>
+                <br>
+                <!-- posted from -->
+                <span class="user-handle">{{item.postDate |date}}</span>
+              </a>
+
+
+            </div>
+
+
+
+            <!-- post text -->
+            <div class="post-text">
+              <p>{{item.content | titlecase}}</p>
+            </div>
+            <img [src]="'https://fitnessarena-api20220806024507.azurewebsites.net/images/'+item.photoSrc" width="90% " height="500"  style="border-radius: 12px;" *ngIf="item.photoSrc;">
+            <br>
+            <!-- post icons -->
+            <div class="post-icons">
+
+              <span class="material-symbols-outlined" (click)="iconToggleLike($event,item.postId)"
+                [ngClass]="{'material-symbols-outlined-pressed': check(item.postId)}">
+                thumb_up {{item.numberOfLikes}}&nbsp;
+              </span>
+              <span class="material-symbols-sharp" (click)="Dialog(item.postId)">
+                chat {{item.numberOfComments}}&nbsp;
+              </span>
+
+              <span class="material-symbols-outlined" (click)="iconToggleShare($event,item.postId)"
+                [ngClass]="{'material-symbols-outlined-pressed': checkShare(item.postId)}">
+                send {{item.numberOfShares}}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Main Feed End -->
+
+
+
+
+
+      <!-- Side Feed Start -->
+      <div class="side-feed">
+
+        <!-- 1st Element - SearchBar -->
+        <div class="search ">
+          <input type="text" placeholder="Search FitnessGarage">
+        </div>
+
+        <!-- 2nd Element - Trending -->
+        <div class="trending">
+          <!-- Title -->
+          <h1 class="h1-title fw-bold">
+
+            Whats's happening
+          </h1>
+
+          <!-- Item -->
+          <div class="trending-item">
+            <div class="item-category">
+              <span>Trending in Egypt</span>
+
+              <span class="material-symbols-outlined dotted-trending">
+                more_horiz
+              </span>
+            </div>
+            <p>leg_day</p>
+            <span>100k Posts</span>
+
+          </div>
+
+          <!-- Item COPIES Start-->
+          <div class="trending-item">
+            <div class="item-category">
+              <span>Trending in Egypt</span>
+
+              <span class="material-symbols-outlined dotted-trending">
+                more_horiz
+              </span>
+            </div>
+            <p>leg_day</p>
+            <span>100k Posts</span>
+
+          </div>
+
+          <div class="trending-item">
+            <div class="item-category">
+              <span>Trending in Egypt</span>
+
+              <span class="material-symbols-outlined dotted-trending">
+                more_horiz
+              </span>
+            </div>
+            <p>leg_day</p>
+            <span>100k Posts</span>
+
+          </div>
+
+          <div class="trending-item">
+            <div class="item-category">
+              <span>Trending in Egypt</span>
+
+              <span class="material-symbols-outlined dotted-trending">
+                more_horiz
+              </span>
+            </div>
+            <p>leg_day</p>
+            <span>100k Posts</span>
+
+          </div>
+
+          <div class="trending-item">
+            <div class="item-category">
+              <span>Trending in Egypt</span>
+
+              <span class="material-symbols-outlined dotted-trending">
+                more_horiz
+              </span>
+            </div>
+            <p>leg_day</p>
+            <span>100k Posts</span>
+          </div>
+          <!-- Item COPIES End -->
+
+        </div>
+
+
+
+
+
+      </div>
+      <!-- Side Feed End -->
+
+    </div>
+  </section>
+
+
+
+    <!-- comments modal -->
+
+<!--/////////////////post comments modal/////////////////////// -->
+<div  >
+  <p-dialog [(visible)]="commentShow" [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '50vw'}">
+    <ng-template pTemplate="header">
+      <h3>Post Comments</h3>
+    </ng-template>
+
+        <div *ngFor="let comment of postcomments">
+          <div class="card mb-3">
+            <div class="card-header comment" >
+             <h5> {{comment.fname |titlecase}} {{comment.lname |titlecase}}</h5>
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p>{{comment.content}}</p>
+
+                <footer class="blockquote-footer"><cite title="Source Title">{{comment.type}}</cite></footer>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+        <ng-template pTemplate="footer" class="container">
+          <div class="row">
+            <div class="col-8">
+              <input type="text" class="form-control"   placeholder="Share Your Opinion" [(ngModel)]="content">
+            </div>
+            <div class="col-4">
+              <button type="button" class="btn btn-warning comment" (click)="addComment()" >Add Comment</button>
+            </div>
+
+          </div>
+      </ng-template>
+    </p-dialog>
+</div>
+<!--/////////////////post comments modal/////////////////////// -->

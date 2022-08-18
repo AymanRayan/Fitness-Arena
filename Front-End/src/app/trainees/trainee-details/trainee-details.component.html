@@ -1,0 +1,217 @@
+<body>
+    
+    
+    
+    <!-- Page Name -->
+        <div class="container">
+            <h5 class="pageName">{{clientData.fname | titlecase}} {{clientData.lname | titlecase}}</h5>
+    </div>
+      
+      
+    <!-- Profile photo and Name -->
+        <div class="container first-container">
+            <div class="profileAndName">
+                <img *ngIf="clientData.photoSrc != null else elseblock" class="image"src='https://fitnessarena-api20220806024507.azurewebsites.net/images/{{clientData.photoSrc}}'>
+          <ng-template #elseblock>
+            <img class="image" src='https://fitnessarena-api20220806024507.azurewebsites.net/images/{{clientData.gender}}.jpg' >
+          </ng-template>
+                <div>
+                    <h3>{{clientData.fname | titlecase}} {{clientData.lname | titlecase}}</h3>
+                </div>
+            </div>
+            <span class="KalamHeader">
+                <p class="staticWord">Current weight:</p>
+                <p>80 KG</p>
+            </span>
+
+            <span class="KalamHeader">
+                <p class="staticWord">Target:</p>
+                <p>{{clientData.target}}</p>
+            </span>
+            
+    </div>
+      
+    <!-- Info -->
+        <div class="container info-container">
+            <!-- 1st Row -->
+            <div class="row">
+                <div class="col r1c1">
+                        <p>
+                            <span class="static-word">Age:</span> <br>
+                            <span class="dynamic-word">{{clientData.age}}</span>
+                        </p>
+                </div>
+      
+                <div class="col r1c2">
+                    <p>
+                        <span class="static-word">Email:</span><br>
+                        <span class="dynamic-word">{{clientData.email}}</span>
+                    </p>
+                </div>
+      
+                <div class="col r1c2">
+                    <p>
+                        <span class="static-word">Phone:</span><br>
+                        <span class="dynamic-word">01001122334</span>
+                    </p>
+                </div>
+            </div>
+      
+    </div>
+      
+
+      
+    <!-- Coaches Section Start -->
+        <section  class="coachSection">
+            <div class="container mt-1">
+                <div class="row gy-4 my-3 elrow ">
+                    <!--******************** New CARD START *********************-->
+                    <div class="col col-sm elcol d-flex justify-content-center">
+                        <!-- Card start -->
+                        <div class="card" style="width: 18rem;">
+                            <div class="single-price">
+                                <h1 class="fw-bold subTitle">Subscribtion Deatils</h1>
+      
+                                <div class="deals">
+                                    <p>
+                                        <span class="staticWhite">Name:</span> 
+                                        <span class="dynamicWhite">{{traineebundle.name}}</span> 
+                                    </p>
+                                    <div *ngFor="let item of traineebundle.traineeBundles">
+                                        <p >
+                                            <span class="staticWhite">Start Date:</span> 
+                                            <span class="dynamicWhite"> {{item.subscriptionDate | date: 'dd/MM/yyyy'}}</span> 
+                                        </p>
+    
+                                        <p>
+                                            <span class="staticWhite">End Date:</span> 
+                                            <span class="dynamicWhite">{{item.expiryDate | date: 'dd/MM/yyyy'}}</span> 
+                                        </p>
+                                    </div>
+                                    <p>
+                                        <span class="staticWhite">Price:</span> 
+                                        <span class="dynamicWhite">{{traineebundle.fees}}</span> 
+                                    </p>
+                                </div>
+      
+                                <!-- <button type="button" class=" my-3 elButton">Select</button> -->
+      
+                            </div>
+                        </div>
+                        <!-- Card End -->
+                    </div>
+                    <!--******************** New CARD END *********************-->
+
+
+                    <!--******************** New CARD START *********************-->
+                    <div class="col col-sm elcol d-flex justify-content-center">
+                        <!-- Card start -->
+                        <div class="card" style="width: 18rem;" *ngFor="let item of traineeProgram" >
+                            <div class="single-price">
+                                <h1 class="fw-bold subTitle">{{item.name}}</h1>
+      
+                                <div class="deals">
+                                    <p>
+                                        <span class="staticWhite">Target</span> 
+                                        <span class="dynamicWhite">{{item.target}}</span> 
+                                    </p>
+
+                                    <p>
+                                        <span class="staticWhite">Program Description:</span> 
+                                        <span class="dynamicWhite">{{item.progDecription}}</span> 
+                                    </p>
+
+                                    <div class="progBtns"*ngFor="let i of item.traineeprograms" >
+                                        <button routerLink ="/programs/{{item.programId}}" type="button" class="mb-2 elButton">workouts</button>
+                                        <button (click)="unassignProgram(i.traiProgID)" type="button" class="b-3 elButton">UnAssign</button>
+                                        
+                                        
+                                    </div>
+                                </div>
+                        </div>
+                        <!-- Card End -->
+                    </div>
+                    <!--******************** New CARD END *********************-->
+                    
+                </div>
+            </div> 
+        
+    <!-- Coaches Section End -->
+
+
+
+
+
+    <div class="container">
+        <!-- Header -->
+        <div class="plansHeader">
+          <h5 class="pageName">InBody</h5>
+        </div>
+      </div>
+      <div class="container">
+        <!-- Table -->
+        <div class="el">
+          <table class="table table-striped table-hover">
+              <thead>
+                  <tr>
+                    <th scope="col" class="tobTableRadiusLeft">#</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Muscle %</th>
+                    <th scope="col">minerals</th>
+                    <th scope="col">proteins</th>
+                    <th scope="col">proteins</th>
+                    <th scope="col">Body Water</th>
+                    <th scope="col">weight</th>
+                    <!-- <th scope="col">Actions</th> -->
+    
+                    <!-- <th scope="col" class="tobTableRadiusRight">...</th> -->
+                  </tr>
+                </thead>
+      
+                <tbody>
+                  <tr *ngFor="let item of inbody; let x = index;">
+                    <th scope="row">{{x +1}}</th>
+                    <td>{{item.date | date }}</td>
+                    <td>{{item.muscle}}%</td>
+                    <td>{{item.minerals}}%</td>
+                    <td>{{item.proteins}}%</td>
+                    <td>{{item.water}}%</td>
+                    <td>{{item.weight}}</td>
+                    <td>{{item.height}}</td>
+                  </tr>
+                 
+                </tbody>
+          </table>
+          </div>
+      </div>
+      <form [formGroup]="assign" (ngSubmit)="assignProg()">
+        <select formControlName="programId" class="form-select" aria-label="Default select example" >
+            <option *ngFor="let item of coachProgram" value="{{item.programId}}">
+                {{item.name}}
+            </option>
+          </select>
+          <input type="Submit" class="btn" value="Assign">
+        </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

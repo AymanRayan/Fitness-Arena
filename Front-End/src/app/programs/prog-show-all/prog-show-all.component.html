@@ -1,0 +1,45 @@
+<div class="page" id="coach">
+
+
+  <div class="container">
+    <!-- Header -->
+    <div class="plansHeader">
+      <h5 class="pageName">My Programs</h5>
+      <button routerLink="/programs/addnew" type="button" class="addNewBtnn">Add new Program</button>
+    </div>
+  </div>
+  
+  <div class="container">
+    <!-- Table -->
+    <div class="el">
+      <table class="table table-striped table-hover">
+          <thead>
+              <tr>
+                <th scope="col" class="tobTableRadiusLeft">#</th>
+                <th scope="col">Program Name</th>
+                <th scope="col">Target</th>
+                <th scope="col">Description</th>
+                <th scope="col">Action</th>
+
+                <!-- <th scope="col" class="tobTableRadiusRight">...</th> -->
+              </tr>
+            </thead>
+  
+            <tbody>
+              <tr *ngFor="let item of coachProgram; ;let index = index">
+                <th scope="row">{{index + 1}}</th>
+                <td><a routerLink ="/programs/{{item.programId}}">{{item.name}}</a></td>
+                <td>{{item.target}}</td>
+                <td>{{item.progDecription}}</td>
+                <td>
+                  <button class = "btn" routerLink="/programs/edit/{{item.programId}}">Edit</button>
+                  <button class = "btn" (click)="deleteProg(item.programId)">Delete</button>
+                </td>
+              </tr>
+             
+            </tbody>
+      </table>
+      </div>
+  </div>
+
+</div>

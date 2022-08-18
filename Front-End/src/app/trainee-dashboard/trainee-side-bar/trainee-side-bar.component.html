@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<section id="coach" class="body-pd">
+  <header class="header" id="header">
+    <div class="header_toggle"> <i class="fa fa-bars" aria-hidden="true" id="header-toggle" ></i>
+    </div>
+    <div class="header_img">
+      <a routerLink="/trainee/{{userID}}">
+        <img [src]="photoSrc" alt="profile-image" id="pp" >
+      </a>
+    </div>
+
+  </header>
+  <div class="l-navbar" id="nav-bar">
+    <nav class="nav">
+      <div>
+        <a routerLink="/traineehome" class="nav_logo">
+          <i class="fa fa-futbol-o" aria-hidden="true"></i>
+          <span class="nav_logo-name">Fitness Garage</span> </a>
+        <div class="nav_list">
+          <a routerLink="/traineehome" class="nav_link active">
+            <i class="fa fa-home" aria-hidden="true"></i>
+            <span class="nav_name">NewsFeed</span> </a>
+          <a routerLink="trainee/{{userID}}" class="nav_link">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <span class="nav_name">Profile</span> </a>
+          <a routerLink="/traineeprogram" class="nav_link">
+            <i class="fa fa-users" aria-hidden="true"></i>
+            <span class="nav_name">Program</span>
+          </a>
+          <a routerLink="/Traineeinbody" class="nav_link">
+            <i class="fa fa-file-text" aria-hidden="true"></i>
+            <span class="nav_name">InBody</span> </a>
+          <a routerLink="/contactcoach" class="nav_link">
+            <i class="fa fa-comment"></i>
+            <span class="nav_name">ChatHub</span> </a>
+          <a routerLink="/Explorecoaches" class="nav_link">
+            <i class="fa fa-search"></i>
+            <span class="nav_name">Explore coaches</span> </a>
+            <a routerLink="traineeEditprofile/{{userID}}" class="nav_link">
+              <i class="fa fa-cogs" aria-hidden="true"></i>
+              <span class="nav_name">Setting</span> </a>
+        </div>
+      </div> <a class="nav_link" (click)="logOut()">
+        <i class="fa fa-sign-out" aria-hidden="true" ></i> <span class="nav_name">SignOut</span> </a>
+    </nav>
+  </div>
+</section>

@@ -1,0 +1,562 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*
+{
+    font-family: 'poppins', sans-serif !important;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar
+{
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: linear-gradient(to top,#2b121c, #40679c);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+    background: #6f263e;
+
+}
+
+
+
+
+
+
+
+.page
+{
+    margin-top: 20px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content:center !important;
+    /* background: #b6cae6 !important; */
+    background: linear-gradient(45deg,#e4cdd7, #d8e0ee);
+    /* background-image: url(./../../../assets/imgs/bg.png); */
+    background-attachment: fixed;
+}
+
+.bgi
+{
+    background: #2b121c;
+    z-index: 10;
+    cursor:default;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.pageName
+{
+    font-weight: 600;
+    margin-top: 25px;
+}
+
+.first-container
+{
+    padding: 15px 25px 15px !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    border-radius: 999px;
+    /* background: linear-gradient(rgba(43,18,28,0.8), rgba(64,103,156,0.8)); */
+    background: #2b121c;
+}
+
+.profileAndName
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.first-container h3
+{
+    font-weight: 700;
+    color: white;
+}
+
+.first-container h4
+{
+    font-size: 1rem;
+    color: white;
+}
+
+.editAndSave
+{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.editProfile
+{
+    padding: 5px 30px !important;
+    margin: 0 20px 0 0 !important;
+    border-radius: 50px;
+    border: none;
+    background: #40679c;
+    color: white;
+    margin: 10px 0;
+    transition: 0.2s ease-in;
+}
+
+.editProfile:hover
+{
+    background: #658abc;
+}
+
+.editPhoto
+{
+    padding: 5px 30px !important;
+    margin: 0 20px 0 0 !important;
+    border-radius: 50px;
+    border: none;
+    background:none;
+    border: 2px solid #40679c;
+    color: white;
+    margin: 10px 0;
+    transition: 0.2s ease-in;
+}
+
+.editPhoto:hover
+{
+    background: #40679c;
+}
+
+.changePassword
+{
+    padding: 5px 30px !important;
+    margin: 0 20px 0 0 !important;
+    border-radius: 50px;
+    border: none;
+    background: #b44c5d;
+    color: white;
+    margin: 10px 0;
+    transition: 0.2s ease-in;
+}
+
+.changePassword:hover
+{
+    background: #cd6375;
+}
+
+.image
+{
+    border-radius: 9999px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 9rem;
+    box-sizing: border-box;
+    margin: 0;
+    border: 4px solid #40679c;
+    margin-right: 25px;
+    transition: 0.5s ease-in-out;
+}
+
+.image:hover
+{
+    transform: scale(1.1);
+}
+
+/* ********************************** */
+/* Info */
+
+.info-container
+{
+    padding: 15px 70px !important;
+    margin-top: 15px;
+    border-radius: 40px;
+    border: 3px solid #2b121c;
+    /* background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)); */
+}
+
+.static-word
+{
+    font-weight: 600;
+    color: #11050a;
+}
+
+.dynamic-word
+{
+    color: #11050a;
+}
+
+.row input,
+.modal-body input
+{
+    outline: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #11050ad4;
+    border-radius: 20px;
+    border: none;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+
+.infoBtns
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* **************************************** */
+/* Plans */
+
+.plansHeader
+{
+    display: flex;
+    justify-content: space-between;
+    align-items:baseline;
+    margin-top: 30px;
+}
+
+.tobTableRadiusLeft
+{
+    border-top-left-radius: 20px !important;
+}
+
+.tobTableRadiusRight
+{
+    border-top-right-radius: 20px !important;
+}
+
+td,th
+{
+padding: 4px, 4px, 4px, 15x !important;
+align-items: center;
+}
+
+.AddPlan
+{
+    padding: 5px 30px !important;
+    margin: 0 20px 0 0 !important;
+    border-radius: 50px;
+    border: none;
+    background:#40679c;
+    color: white;
+    margin: 10px 0;
+    transition: 0.2s ease-in;
+}
+
+.AddPlan:hover
+{
+    background: #658abc;
+}
+
+.saveChanges
+{
+    padding: 5px 30px !important;
+    margin: 0 20px 0 0 !important;
+    border-radius: 50px;
+    border: none;
+    background: #40679c;
+    color: white;
+    margin: 10px 0;
+    transition: 0.2s ease-in;
+}
+
+.saveChanges:hover
+{
+    background: #658abc;
+}
+
+.cancelChanges
+{
+    padding: 5px 30px !important;
+    margin: 0 20px 0 0 !important;
+    border-radius: 50px;
+    border: 2px solid #40679c;
+    color: #40679c;
+    background: none;
+    margin: 10px 0;
+    transition: 0.2s ease-in;
+}
+
+.cancelChanges:hover
+{
+    background: #40679c;
+    color: white;
+}
+
+
+/* ****************************************** */
+/* Modal */
+
+
+.btn
+{
+    background: #6f263e !important;
+    border-radius: 50px;
+    border: none !important;
+    transition: 0.4s ease-in-out;
+}
+
+.btn:hover
+{
+    border: none !important;
+    background: #6f263e !important;
+}
+
+
+.modal-body
+{
+    background: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.ModalSatr
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+#exampleModal
+{
+    width: 100%;
+}
+
+.modal-header
+{
+    background: none;
+    border: none;
+    color: white;
+}
+
+.modal-content
+{
+    background: linear-gradient(rgba(43,18,28,0.95), rgba(64,103,156,0.95));
+    border-radius: 20px;
+    border: 2px solid #6f263e;
+}
+
+.show
+{
+    width: 100%;
+    display: none;
+}
+
+.modal-footer
+{
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-label
+{
+    color: white;
+    font-weight: 600;
+}
+@media screen and (max-width:1100px)
+{
+    .profileAndName
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.profileAndNameContent
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.first-container
+{
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    padding: 0;
+    width: 90%;
+}
+
+.editAndSave
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 10px;
+    
+}
+
+.profileAndNameContent
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+}
+
+@media screen and (max-width: 550px) 
+{
+    .editAndSave
+    {
+        display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: scale(0.9);
+    }    
+
+    .editPhoto
+    {
+        margin-bottom: 15px !important;
+        width: 100%;
+    }
+
+    .editProfile
+    {
+        width: 100%;
+    }
+
+    .changePassword
+    {
+        transform: scale(0.9);
+    }
+
+    .changePassword
+    {
+        width:70%;
+    }
+
+    .page
+    {
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width:1000px) 
+{
+      .row
+      {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }  
+
+      .info-container
+      {
+        width: 60%;
+      }
+
+      input
+      {
+        width: 90%; 
+      }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* **************************************** */
+/* color classes */
+
+/* background colors */
+
+/* black */
+.bg-black {
+    background-color: #060606;
+}
+/* grey */
+.bg-grey {
+    background-color: #222428;
+}
+/* dark orange */
+.bg-orange1 {
+    background-color: #C36312;
+}
+/* light orange */
+.bg-orange2 {
+    background-color: #DD904F;
+}
+/* teal */
+.bg-teal1 {
+    background-color: #02807D;
+}
+/* dark teal */
+.bg-teal2 {
+    background-color: #095D66;
+}
+/* off-white */
+.bg-white1 {
+    background-color: #EEE7E1;
+}
+
+/* text colors */
+
+/* black */
+.t-black {
+    color: #060606;
+}
+/* grey */
+.t-grey {
+    color: #222428;
+}
+/* dark orange */
+.t-orange1 {
+    color: #C36312;
+}
+/* light orange */
+.t-orange2 {
+    color: #DD904F;
+}
+/* teal */
+.t-teal1 {
+    color: #02807D;
+}
+/* dark teal */
+.t-teal2 {
+    color: #095D66;
+}
+/* off-white */
+.t-white1 {
+    color: #EEE7E1;
+}

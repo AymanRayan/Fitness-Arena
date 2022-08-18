@@ -1,0 +1,99 @@
+<!-- <section class="gradient-custom">
+  <div class="container py-5">
+
+    <div class="row">
+      <div class="col-md-12 col-lg-10 col-xl-12">
+
+        <ul class="list-unstyled text-white min" >
+          <li class="d-flex justify-content-between mb-4" *ngFor="let msg of messages">
+            <div class="card mask-custom w-100">
+              <div class="card-header d-flex justify-content-between p-3"
+                style="border-bottom: 1px solid rgba(255,255,255,.3);">
+                <p class="fw-bold mb-0">{{msg.username|titlecase}}</p>
+                <p class="text-light small mb-0"><i class="far fa-clock"></i> {{msg.senddate|date:'mediumTime'}}</p>
+              </div>
+              <div class="card-body">
+                <p class="mb-0">
+                  {{msg.message}}
+                </p>
+              </div>
+            </div>
+            <img src={{msg.imgurl}}
+              class="rounded-circle d-flex align-self-start ms-3 shadow-1-strong" width="60">
+          </li>
+
+
+        </ul>
+        <div class="form-outline form-white">
+          <label class="form-label" for="textAreaExample3">Message</label>
+          <form (submit)="submit()">
+            <input class="form-control" id="textAreaExample3" placeholder="Write a message" [value]="message"
+            (change)="change($event)"
+            />
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section> -->
+<!-- <div class="page">
+  <div class="container messagesBox">
+
+    <div class="container secondPersonMessage">
+      <img src="imgs/dalia.jpg" class="secondPersonImage">
+      <p>eh el denya m3ak?</p>
+    </div>
+
+    <div class="container firstPerson" *ngFor="let msg of messages">
+      <p> {{msg.message}}
+      </p>
+      <img src={{msg.imgurl}} class="firstPersonImage">
+    </div>
+
+
+
+  </div>
+
+
+ -->
+
+ <div class="page">
+  <div class="container messagesBox">
+
+
+
+<div *ngFor="let msg of messages" >
+
+  <div class="container " class="{{msg.userId==this.userId ? 'firstPerson' : 'secondPersonMessage'}}">
+    <img src={{msg.imgurl}} class="secondPersonImage" *ngIf="msg.userId!=this.userId">
+    <p class="Name" *ngIf="msg.userId!=this.userId">{{msg.username|titlecase}}</p>
+
+    <h6 class="date">{{msg.senddate|date:'mediumTime'}}</h6>
+    <p class="Name" *ngIf="msg.userId==this.userId">{{msg.username|titlecase}}</p>
+    <img src={{msg.imgurl}} class="firstPersonImage" *ngIf="msg.userId==this.userId">
+  </div>
+  <div class="container " class="{{msg.userId==this.userId ? 'secondPersonMessageEdited' : 'secondPersonMessage'}}">
+    <p class="messageItSelf">{{msg.message}}</p>
+  </div>
+</div>
+
+
+<!--  -->
+
+
+
+
+  </div>
+
+  <!-- <form > -->
+  <form class="container typeMessage">
+
+    <input  type="text" placeholder="Write a message" [value]="message"
+    (change)="change($event)" (submit)="submit()">
+
+    <button class="sendBtn" id="bttn" (click)="submit()">Send</button>
+  </form>
+<!-- </form> -->
+</div>
